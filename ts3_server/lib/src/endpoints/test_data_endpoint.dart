@@ -7,7 +7,7 @@ class TestDataEndpoint extends Endpoint {
   
   /// Создает новую запись TestData в базе данных.
   Future<TestData> createTestData(Session session, TestData testData) async {
-    final testNew2 = testData.copyWith(title2: "igorek");
+    final testNew2 = testData.copyWith(title3: "stas");
 
     await TestData.db.insertRow(session, testNew2);
     return testNew2;
@@ -17,7 +17,7 @@ class TestDataEndpoint extends Endpoint {
   Future<List<TestData>> listTestDatas(Session session) async {
     return await TestData.db.find(
       session,
-      orderBy: (t) => t.title2,
+      orderBy: (t) => t.title3,
     );
   }
 

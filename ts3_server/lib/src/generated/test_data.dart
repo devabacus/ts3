@@ -15,12 +15,12 @@ abstract class TestData
     implements _i1.TableRow<_i1.UuidValue?>, _i1.ProtocolSerialization {
   TestData._({
     this.id,
-    required this.title2,
+    required this.title3,
   });
 
   factory TestData({
     _i1.UuidValue? id,
-    required String title2,
+    required String title3,
   }) = _TestDataImpl;
 
   factory TestData.fromJson(Map<String, dynamic> jsonSerialization) {
@@ -28,7 +28,7 @@ abstract class TestData
       id: jsonSerialization['id'] == null
           ? null
           : _i1.UuidValueJsonExtension.fromJson(jsonSerialization['id']),
-      title2: jsonSerialization['title2'] as String,
+      title3: jsonSerialization['title3'] as String,
     );
   }
 
@@ -39,7 +39,7 @@ abstract class TestData
   @override
   _i1.UuidValue? id;
 
-  String title2;
+  String title3;
 
   @override
   _i1.Table<_i1.UuidValue?> get table => t;
@@ -49,13 +49,13 @@ abstract class TestData
   @_i1.useResult
   TestData copyWith({
     _i1.UuidValue? id,
-    String? title2,
+    String? title3,
   });
   @override
   Map<String, dynamic> toJson() {
     return {
       if (id != null) 'id': id?.toJson(),
-      'title2': title2,
+      'title3': title3,
     };
   }
 
@@ -63,7 +63,7 @@ abstract class TestData
   Map<String, dynamic> toJsonForProtocol() {
     return {
       if (id != null) 'id': id?.toJson(),
-      'title2': title2,
+      'title3': title3,
     };
   }
 
@@ -102,10 +102,10 @@ class _Undefined {}
 class _TestDataImpl extends TestData {
   _TestDataImpl({
     _i1.UuidValue? id,
-    required String title2,
+    required String title3,
   }) : super._(
           id: id,
-          title2: title2,
+          title3: title3,
         );
 
   /// Returns a shallow copy of this [TestData]
@@ -114,29 +114,29 @@ class _TestDataImpl extends TestData {
   @override
   TestData copyWith({
     Object? id = _Undefined,
-    String? title2,
+    String? title3,
   }) {
     return TestData(
       id: id is _i1.UuidValue? ? id : this.id,
-      title2: title2 ?? this.title2,
+      title3: title3 ?? this.title3,
     );
   }
 }
 
 class TestDataTable extends _i1.Table<_i1.UuidValue?> {
   TestDataTable({super.tableRelation}) : super(tableName: 'test_data') {
-    title2 = _i1.ColumnString(
-      'title2',
+    title3 = _i1.ColumnString(
+      'title3',
       this,
     );
   }
 
-  late final _i1.ColumnString title2;
+  late final _i1.ColumnString title3;
 
   @override
   List<_i1.Column> get columns => [
         id,
-        title2,
+        title3,
       ];
 }
 
