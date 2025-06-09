@@ -4,7 +4,7 @@
 docker compose up -d
 serverpod generate --experimental-features=all
 dart bin/main.dart --apply-migrations
-serverpod create-migration --experimental-features=all
+serverpod create-migration --experimental-features=all --force
 
 docker compose down -v
 
